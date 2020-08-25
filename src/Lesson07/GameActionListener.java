@@ -36,24 +36,32 @@ public class GameActionListener implements KeyListener, ActionListener {
                 panel.repaint();
             }
         }
-        if(panel.isStart){
+        if(panel.isStart && !panel.isFailed){
 
             switch (keyCode){
                 case KeyEvent.VK_UP:
-                    move.moveUP(head , list);
-                    panel.fx = "U";
+                    if(!(panel.fx.equals("U")||panel.fx.equals("D"))){
+                        move.moveUP(head , list);
+                        panel.fx = "U";
+                    }
                     break;
                 case KeyEvent.VK_DOWN:
-                    move.moveDown(head , list);
-                    panel.fx = "D";
+                    if(!(panel.fx.equals("U")||panel.fx.equals("D"))) {
+                        move.moveDown(head, list);
+                        panel.fx = "D";
+                    }
                     break;
                 case KeyEvent.VK_RIGHT:
-                    move.moveRight(head , list);
-                    panel.fx = "R";
+                    if(!(panel.fx.equals("R")||panel.fx.equals("L"))){
+                        move.moveRight(head , list);
+                        panel.fx = "R";
+                    }
                     break;
                 case KeyEvent.VK_LEFT:
-                    move.moveLeft(head , list);
-                    panel.fx = "L";
+                    if(!(panel.fx.equals("R")||panel.fx.equals("L"))){
+                        move.moveLeft(head , list);
+                        panel.fx = "L";
+                    }
                     break;
                 default:
                     break;

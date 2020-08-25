@@ -1,9 +1,11 @@
 package Lesson07;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class StartGame {
-    public static void main(String[] args) {
+public class StartGame{
+
+    public static void main(String[] args){
         JFrame frame = new JFrame();
 
         frame.add(new GamePanel());
@@ -15,4 +17,5 @@ public class StartGame {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
+
 }

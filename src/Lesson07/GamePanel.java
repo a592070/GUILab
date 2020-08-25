@@ -55,6 +55,7 @@ public class GamePanel extends JPanel {
         timer.start();
     }
 
+
     // 控制面板，所有物件都使用這個方法繪製
     @Override
     public void paintComponent(Graphics g) {
@@ -68,7 +69,23 @@ public class GamePanel extends JPanel {
 
         // 繪製 snake
         Point first = list.get(0);
-        ObjectData.head.paintIcon(this, g, first.x, first.y);
+
+        switch (fx){
+            case "U":
+                ObjectData.headUp.paintIcon(this, g, first.x, first.y);
+                break;
+            case "D":
+                ObjectData.headDown.paintIcon(this, g, first.x, first.y);
+                break;
+            case "L":
+                ObjectData.headLeft.paintIcon(this, g, first.x, first.y);
+                break;
+            case "R":
+                ObjectData.headRight.paintIcon(this, g, first.x, first.y);
+                break;
+        }
+
+
         for (int i = 1; i < list.size(); i++) {
             Point next = list.get(i);
             ObjectData.body.paintIcon(this, g, next.x, next.y);
@@ -78,7 +95,7 @@ public class GamePanel extends JPanel {
         if(isStart == false){
             g.setColor(Color.WHITE);
             g.setFont(new Font("LetterOMatic!" , Font.BOLD , 45)); // Expo M
-            g.drawString("Press SPACE to Start" , 100,400);
+            g.drawString("Press  SPACE  to Start" , 200,400);
         }
 
         if(isFailed == true){
@@ -90,11 +107,11 @@ public class GamePanel extends JPanel {
 
         // 得分
         g.setColor(Color.BLUE);
-        g.setFont(new Font("Alien Encounters" , Font.PLAIN , 25));
+        g.setFont(new Font("Alien Encounters" , Font.BOLD , 25));
         g.drawString("Snake size:  "+list.size() , 25,50);
 
         g.setColor(Color.BLUE);
-        g.setFont(new Font("Alien Encounters" , Font.PLAIN , 25));
+        g.setFont(new Font("Alien Encounters" , Font.BOLD , 25));
         g.drawString("Score:  "+score , 500,50);
     }
 }
