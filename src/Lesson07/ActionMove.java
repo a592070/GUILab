@@ -126,6 +126,22 @@ public class ActionMove {
                 panel.speed*=0.9;
                 panel.timer.setDelay(panel.speed);
                 break;
+            case 700:
+                panel.speed*=0.9;
+                panel.timer.setDelay(panel.speed);
+                break;
+            case 900:
+                panel.speed*=0.9;
+                panel.timer.setDelay(panel.speed);
+                break;
+            case 1200:
+                panel.speed*=0.9;
+                panel.timer.setDelay(panel.speed);
+                break;
+            case 1500:
+                panel.speed*=0.9;
+                panel.timer.setDelay(panel.speed);
+                break;
             default:
                 break;
         }
