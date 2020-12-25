@@ -10,7 +10,7 @@ public class Demo03Dialog extends JFrame {
     public void init(){
         this.setVisible(true);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setBounds(10,10,200,200);
+        this.setBounds(10,10,300,300);
 
         Container contentPane = this.getContentPane();
         contentPane.setBackground(Color.YELLOW);
@@ -23,7 +23,7 @@ public class Demo03Dialog extends JFrame {
         contentPane.add(label);
 
         JButton button = new JButton("click");
-        button.setBounds(500,500,100,50);
+        button.setBounds(0,0,100,50);
         contentPane.add(button);
 
         button.addActionListener(new ActionListener() {
@@ -41,7 +41,7 @@ public class Demo03Dialog extends JFrame {
 class SimpleJDialog extends JDialog{
     public SimpleJDialog() {
         this.setVisible(true);
-        this.setBounds(500,300,100,100);
+        this.setBounds(0,0,100,100);
         // defaultCloseOperation must be one of: DO_NOTHING_ON_CLOSE, HIDE_ON_CLOSE, or DISPOSE_ON_CLOSE
         // 默認就是 EXIT_ON_CLOSE 不需要特別設置
 //        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
